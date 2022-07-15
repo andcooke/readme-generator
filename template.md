@@ -1,36 +1,47 @@
-# Title
+# ${response.title}
 
-inputted title of the project goes here.
+license badge
 
 ## Description
 
-inputted description goes here.
+${response.description}
 
 ## Table of Contents
 
-build table of contents here
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [License](#license)
+5. [Contributors](#contributors)
+6. [Tests](#tests)
+7. [Questions](#questions)
+
 
 ## Installation
 
-inputted installation goes here.
+${response.installation}
 
 ## Usage
 
-inputted usage goes here.
+${response.usage}
 
 ## License
 
 The license description goes here and a badge goes up top
 
-## Contributing
+## Contributors
 
-inputted contributors goes here
+[${name}](https://github.com/${github})
 
 ## Tests
 
 inputted tests goes here
 
 ## Questions
+
+If you have any questions you may email us at ${response.email}.
+
+
 
 github username goes here
 email address goes here
