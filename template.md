@@ -27,7 +27,7 @@ ${response.usage}
 
 ## License
 
-The license description goes here and a badge goes up top
+${response.license}
 
 ## Contributors
 
