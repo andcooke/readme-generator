@@ -1,6 +1,6 @@
 # ${response.title}
 
-license badge
+getBadge(response.license);
 
 ## Description
 

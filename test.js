@@ -1,3 +1,37 @@
+let licenses = [];
+const requestUrl = 'https://api.github.com/licenses';
+
+console.log("test");
+
+function getLicenses() {
+
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      //console.log(data)
+      for (let i = 0; i < data.length; i++){
+        licenses.push(data[i].name);
+        return (licenses);
+        getLicenseInfo(data[i].url);
+      }
+    });
+}
+
+function getLicenseInfo(license) {
+  let licenseInfoURL = license;
+    fetch(licenseInfoURL)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data.body);
+    })
+}
+
+
+
 const inquirer = require('inquirer');
 const fs = require('fs');
 
@@ -29,7 +63,7 @@ const questions = [
   },
   {
     type: 'list',
-    choices: ['Apache License 2.0', 'MIT License', 'GNU General Public License v3.0', 'BSD 2-Clause "Simplified" License'],
+    choices: licenses,
     message: 'What kind of license do you have on this project?',
     name: 'license',
   },
@@ -51,9 +85,7 @@ const questions = [
 ];
 
 
-const promptUser = () => {
-  return inquirer.prompt(questions)
-}
+
 
 const writeREADME = (response) => {
   return ``;
@@ -70,7 +102,8 @@ function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 const init = () => {
-  promptUser()
+  getLicenses()
+  .then (promptUser())
   //.then((response) => fs.writeFile('README.md', writeREADME(response)))
   .then(() => {
     console.log('Successfully wrote to index.html\n');
@@ -99,4 +132,3 @@ function getBadge (license){
 init();
 
 
-'Apache License 2.0', 'MIT License', 'GNU General Public License v3.0', 'BSD 2-Clause "Simplified" License'
