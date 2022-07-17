@@ -1,3 +1,12 @@
+Please, click the walkthrough video below to see how the README below was generated:
+
+
+https://user-images.githubusercontent.com/105688564/179424290-430c2847-b974-4511-b1af-12b84d043bc0.mp4
+
+
+
+
+
 # README Generator
 
   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
